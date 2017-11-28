@@ -74,8 +74,8 @@ push-release:
     # push container as-is
     - internal/docker-push:
         disable-sync: true
-        repository: quay.io/wercker/todo-demo-release
+        repository: https://hub.docker.com/r/osaora/node_app/
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        registry: quay.io
+        registry: docker.io
         tag: $WERCKER_GIT_BRANCH
