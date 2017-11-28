@@ -66,10 +66,6 @@ release-build:
 #
 push-release:
   steps:
-    - script:
-        name: cleanup build result
-        code: |
-          rm -rf *
 
     # push container as-is
     - internal/docker-push:
@@ -78,4 +74,4 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: hub.docker.com
-        tag: $WERCKER_GIT_BRANCH
+        tag: 1
