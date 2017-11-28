@@ -74,7 +74,7 @@ push-release:
     # push container as-is
     - internal/docker-push:
         disable-sync: true
-        repository: https://hub.docker.com/r/osaora/node_app/
+        repository: docker.io/r/osaora/node_app
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: docker.io
