@@ -60,7 +60,7 @@ release-build:
     - script:
         name: build release code
         code: |
-          npm run build
+          npm run
 #
 #
 #
