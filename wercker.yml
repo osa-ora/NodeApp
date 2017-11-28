@@ -77,5 +77,5 @@ push-release:
         repository: osaora/node_app
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        registry: docker.io
+        registry: hub.docker.com
         tag: $WERCKER_GIT_BRANCH
