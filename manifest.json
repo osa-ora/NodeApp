@@ -1,0 +1,12 @@
+{
+    "runtime":{
+        "majorVersion": "0.12"
+    },
+    "command": "npm start 8087",
+    "release": {
+        "build": "0.1",
+        "commit": "FinalNode-OsamaOransa",
+        "version": "1.0"
+    },
+    "notes": "Node app for testing"
+}

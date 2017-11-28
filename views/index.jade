@@ -1,0 +1,10 @@
+include ./header.jade
+block content
+  h1= title
+  p Welcome to #{title}
+p Enter an Employee number to see his/her data</p>
+<form name='users' action='/users' method='get'>
+<input type='text' name='emp_num' />
+<input type='submit' value='Submit' />
+</form>
+include ./footer.jade
