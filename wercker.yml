@@ -16,6 +16,17 @@ box: node
 
     # - mongo
     # http://devcenter.wercker.com/docs/services/mongodb.html
+#
+# one special pipeline called dev, which will only be executed 
+# when running it with the CLI using the wercker dev command.
+#
+dev:
+  steps:
+    - npm-install
+    - internal/watch:
+        code: node app.js
+        reload: true
+#
 build:
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline
@@ -34,3 +45,38 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+#
+#
+#
+#
+release-build:
+  steps:
+    - script:
+        name: setup node env
+        code: |
+          export NODE_ENV=development
+
+    # Generate relevant artifacts
+    - script:
+        name: build release code
+        code: |
+          npm run build
+#
+#
+#
+#
+push-release:
+  steps:
+    - script:
+        name: cleanup build result
+        code: |
+          rm -rf *
+
+    # push container as-is
+    - internal/docker-push:
+        disable-sync: true
+        repository: quay.io/wercker/todo-demo-release
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        registry: quay.io
+        tag: $WERCKER_GIT_BRANCH
