@@ -4,9 +4,9 @@
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
 box: 
-	id: node:latest
-	ports: 
-		"8080"
+    id: node:latest
+    ports: 
+        "8080"
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -64,17 +64,17 @@ release-build:
         name: build release code
         code: |
           ls -l
-		  npm run
+          npm run
 #
 #
 #
 push-release:
   steps:
-	- script:
-		name: push release
-		code: |
-			ls -l
-			echo "in release step"
+    - script:
+        name: push release
+        code: |
+            ls -l
+            echo "in release step"
 
     # push container as-is
     - internal/docker-push:
