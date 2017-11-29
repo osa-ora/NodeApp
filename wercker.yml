@@ -3,7 +3,10 @@
 # If you want Nodesource's container you would reference nodesource/node
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: node
+box: 
+	id: node:latest
+	ports: 
+		"8080"
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
@@ -60,12 +63,18 @@ release-build:
     - script:
         name: build release code
         code: |
-          npm run
+          ls -l
+		  npm run
 #
 #
 #
 push-release:
   steps:
+	- script:
+		name: push release
+		code: |
+			ls -l
+			echo "in release step"
 
     # push container as-is
     - internal/docker-push:
