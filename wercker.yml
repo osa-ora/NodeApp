@@ -77,7 +77,7 @@ push-release:
             echo "in release step"
 
     # push container as-is
-    - docker-push:
+    - internal/docker-push:
         disable-sync: true
         repository: osaora/node_app
         username: $DOCKER_USERNAME
