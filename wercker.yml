@@ -83,4 +83,4 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         registry: hub.docker.com
-        tag: 1
+        tag: "FirstOne"
