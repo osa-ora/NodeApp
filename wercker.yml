@@ -84,5 +84,4 @@ push-release:
         password: $DOCKER_PASSWORD
         registry: $DOCKER_REGISTRY
         tag: $DOCKER_TAG_NAME
-        ports: "5000"
-        env: "INSECURE_REGISTRY=docker-registry-default.apps.129.146.142.92.xip.io"
+        env: $INSECURE_REGISTRY
