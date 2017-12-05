@@ -79,8 +79,8 @@ push-release:
     # push container as-is
     - internal/docker-push:
         disable-sync: true
-        repository: osaora/node_app
+        repository: $DOCKER_REPOSITORY
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        registry: hub.docker.com
-        tag: "FirstOne"
+        registry: $DOCKER_REGISTRY
+        tag: $DOCKER_TAG_NAME
