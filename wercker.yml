@@ -82,6 +82,4 @@ push-release:
         repository: $DOCKER_REPOSITORY
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        registry: $DOCKER_REGISTRY
         tag: $DOCKER_TAG_NAME
-        env: $INSECURE_REGISTRY
