@@ -48,7 +48,9 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+          ls -l node_modules
           npm install
+          ls -l node_modules
           node app.js
 #
 #
