@@ -83,3 +83,4 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         tag: $DOCKER_TAG_NAME
+        cmd: npm run
